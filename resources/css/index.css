@@ -35,3 +35,25 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    #fi-report {
+        width: 100% !important;
+        min-width: 100% !important;
+        display: block;
+        visibility: visible;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    @page {
+        size: A4 portrait;
+        display: block;
+        visibility: visible;
+    }
+}

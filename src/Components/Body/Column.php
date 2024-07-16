@@ -2,6 +2,7 @@
 
 namespace EightyNine\Reports\Components\Body;
 
+use EightyNine\Reports\Components\Body\Concerns\CanWrap;
 use Filament\Support\Components\ViewComponent;
 use Filament\Support\Concerns\HasAlignment;
 use Filament\Support\Concerns\HasExtraAttributes;
@@ -38,6 +39,7 @@ class Column extends ViewComponent
     use Conditionable;
     use HasAlignment;
     use HasExtraAttributes;
+    use CanWrap;
     use HasPlaceholder;
 
     protected string $evaluationIdentifier = 'column';

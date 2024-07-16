@@ -48,7 +48,8 @@ trait HasFilterForm
     {
         return [
             Action::make('filter')
-                ->label('Filter')
+                ->icon('fas-filter')
+                ->label(__('filament-reports::actions-panel.filter'))
                 ->submit('filter')
                 ->keyBindings(['mod+s']),
         ];

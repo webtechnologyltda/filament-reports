@@ -2,29 +2,29 @@
 
     <div class="flex w-full">
         <div class="flex-grow">
-            <p class="text-xl">Filters</p>
+            <p class="text-xl">@lang('filament-reports::actions-panel.filters')</p>
         </div>
-        {{-- <x-filament::dropdown>
+        <x-filament::dropdown>
             <x-slot name="trigger">
                 <x-filament::button>
-                    Export
+                    @lang('filament-reports::actions-panel.export')
                 </x-filament::button>
             </x-slot>
 
             <x-filament::dropdown.list>
                 <x-filament::dropdown.list.item wire:click="exportToPdf">
-                    To PDF
+                    @lang('filament-reports::actions-panel.to_pdf')
                 </x-filament::dropdown.list.item>
 
                 <x-filament::dropdown.list.item @click="$exportToExcel()">
-                    To Excel
+                    @lang('filament-reports::actions-panel.to_excel')
                 </x-filament::dropdown.list.item>
 
                 <x-filament::dropdown.list.item @click="$printReport()">
-                    Print
+                    @lang('filament-reports::actions-panel.print')
                 </x-filament::dropdown.list.item>
             </x-filament::dropdown.list>
-        </x-filament::dropdown> --}}
+        </x-filament::dropdown>
     </div>
     <div>
         <x-filament-panels::form :wire:key="$this->getId() . '.forms.' . $this->getFormStatePath()"
