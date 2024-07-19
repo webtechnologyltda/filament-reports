@@ -6,21 +6,21 @@
         </div>
         <x-filament::dropdown>
             <x-slot name="trigger">
-                <x-filament::button>
+                <x-filament::button icon="fas-file-export">
                     @lang('filament-reports::actions-panel.export')
                 </x-filament::button>
             </x-slot>
 
             <x-filament::dropdown.list>
-                <x-filament::dropdown.list.item wire:click="exportToPdf">
-                    @lang('filament-reports::actions-panel.to_pdf')
-                </x-filament::dropdown.list.item>
+{{--                <x-filament::dropdown.list.item wire:click="exportToPdf">--}}
+{{--                    @lang('filament-reports::actions-panel.to_pdf')--}}
+{{--                </x-filament::dropdown.list.item>--}}
 
-                <x-filament::dropdown.list.item @click="$exportToExcel()">
+                <x-filament::dropdown.list.item @click="$exportToExcel()" icon="ri-file-excel-2-fill" color="green" iconColor="success">
                     @lang('filament-reports::actions-panel.to_excel')
                 </x-filament::dropdown.list.item>
 
-                <x-filament::dropdown.list.item @click="$printReport()">
+                <x-filament::dropdown.list.item @click="$printReport()" icon="ri-printer-fill" color="white" iconColor="info">
                     @lang('filament-reports::actions-panel.print')
                 </x-filament::dropdown.list.item>
             </x-filament::dropdown.list>

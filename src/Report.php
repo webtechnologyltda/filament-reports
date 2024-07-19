@@ -26,11 +26,14 @@ class Report extends Page implements HasActionsPanel, HasBody, HasFooter, HasFor
 
     public ?string $heading = '';
 
-    public ?array $sections = ['pad', 'header', 'body', 'footer', 'pad'];
+    public ?array $sections = ['header', 'body', 'footer', 'pad'];
 
     public ?string $subHeading = '';
 
     public ?string $icon = 'heroicon-o-document-text';
+
+    public ?int $iconSize = 20;
+    public ?string $iconColor = 'primary-600';
 
     public static string $view = 'filament-reports::pages.report';
 
@@ -60,10 +63,21 @@ class Report extends Page implements HasActionsPanel, HasBody, HasFooter, HasFor
         return $this->icon;
     }
 
+    public function getIconSize(): int
+    {
+        return $this->iconSize;
+    }
+
+    public function getIconColor(): string
+    {
+        return $this->iconColor;
+    }
+
     public function getGroup(): ?string
     {
         return $this->group ?? __('filament-reports::menu-page.nav.group');
     }
+
 
     public static function getRouteName(?string $panel = null): string
     {

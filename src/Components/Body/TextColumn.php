@@ -22,6 +22,7 @@ class TextColumn extends Column
     use Concerns\HasWeight;
     use HasLineClamp;
 
+
     /**
      * @var view-string
      */
