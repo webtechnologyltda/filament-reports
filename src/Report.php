@@ -25,23 +25,22 @@ class Report extends Page implements HasActionsPanel, HasBody, HasFooter, HasFor
     use ResolvesDynamicLivewireProperties;
 
     public ?string $heading = '';
-
     public ?array $sections = ['header', 'body', 'footer', 'pad'];
-
     public ?string $subHeading = '';
 
     public ?string $icon = 'heroicon-o-document-text';
-
     public ?int $iconSize = 20;
     public ?string $iconColor = 'primary-600';
 
     public static string $view = 'filament-reports::pages.report';
-
     public ?string $group = null;
-
     public ?string $logo = '/img/logo.png';
+    public bool $shouldOpenInNewTab = true;
+    public int $sort = 0;
 
-    public bool $shouldOpenInNewTab = false;
+    public function getSort(): int {
+        return $this->sort;
+    }
 
     public function getShouldOpenInNewTab(): bool
     {

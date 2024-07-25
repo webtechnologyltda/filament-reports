@@ -3,6 +3,7 @@
 namespace EightyNine\Reports;
 
 use Filament\Contracts\Plugin;
+use Filament\Navigation\NavigationGroup;
 use Filament\Navigation\NavigationItem;
 use Filament\Panel;
 use Filament\Support\Enums\MaxWidth;
@@ -32,16 +33,30 @@ class ReportsPlugin implements Plugin
     public function boot(Panel $panel): void
     {
 
-        if (! reports()->getUseReportListPage()) {
+        if (! config('filament-reports.use_report_list_page')) {
+            $panel->navigationGroups([
+                NavigationGroup::make()
+                    ->label(reports()->getNavigationLabel() ?? __('filament-reports::menu-page.nav.group'))
+                    ->icon(reports()->getNavigationIcon() ?? 'heroicon-o-document-chart-bar'),
+            ]);
             $panel->navigationItems(collect(reports()->getReports())->map(function ($report) {
                 $report = app($report);
-
-                return NavigationItem::make($report->getTitle())
+                return NavigationItem::make($report->getHeading())
                     ->url(function () use ($report) {
                         return $report->getUrl();
                     })
+                    ->sort($report->getSort())
+                    ->icon($report->getIcon() ?? 'heroicon-o-document-text')
                     ->group(reports()->getNavigationGroup() ?? __('filament-reports::menu-page.nav.group'));
             })->toArray());
+        } else {
+            $panel->navigationItems([
+                NavigationItem::make()
+                    ->label('Relatórios')
+                    ->url(route('filament.'.$panel->getId().'.pages.reports'))
+                    ->icon('heroicon-o-document-chart-bar')
+                    ->group(config('filament-reports.group_navigation_reports_page') ?? ''),
+            ]);
         }
     }
 

@@ -15,7 +15,7 @@ trait HasPageSettings
 
     protected ?string $heading = null;
 
-    protected ?string $subheading = null;
+    protected ?string $subHeading = null;
 
     protected ?string $header = null;
 
@@ -82,7 +82,7 @@ trait HasPageSettings
 
     public function subHeading(string $subheading)
     {
-        $this->subheading = $subheading;
+        $this->subHeading = $subheading;
 
         return $this;
     }
@@ -208,9 +208,9 @@ trait HasPageSettings
         return $this->header ? view($this->header) : null;
     }
 
-    public function getSubheading(): ?string
+    public function getSubHeading(): ?string
     {
-        return $this->subheading;
+        return $this->subHeading;
     }
 
     public function getHeading(): string

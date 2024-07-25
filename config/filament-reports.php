@@ -12,4 +12,11 @@ return [
      * The namespace where your reports are located
      */
     'reports_namespace' => 'App\\Filament\\Reports',
+
+    /**
+     *
+     */
+    'use_report_list_page' => true,
+
+    'group_navigation_reports_page' => 'Administrativo',
 ];
