@@ -9,7 +9,9 @@ class ActionsPanel extends Component
      */
     protected string $view = 'filament-reports::components.actions-panel';
 
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     public static function make(): static
     {

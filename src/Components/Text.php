@@ -17,7 +17,9 @@ class Text extends Component
      */
     protected string $view = 'filament-reports::components.text';
 
-    public function __construct(public ?string $text = null) {}
+    public function __construct(public ?string $text = null)
+    {
+    }
 
     public function getText(): ?string
     {
