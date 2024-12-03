@@ -19,4 +19,9 @@ return [
     'use_report_list_page' => true,
 
     'group_navigation_reports_page' => 'Administrativo',
+
+    /**
+     * Disable the default reports menu page
+     */
+    'reports_custom_menu_page' => true,
 ];
