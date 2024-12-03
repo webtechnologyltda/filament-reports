@@ -2,4 +2,6 @@
 
 namespace EightyNine\Reports\Components\Actions;
 
-class ExcelAction {}
+class ExcelAction
+{
+}
