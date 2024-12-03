@@ -12,6 +12,9 @@ class MenuPage extends Page
 
     protected static string $view = 'filament-reports::pages.menu-page';
 
+    public $inputSearch = '';
+
+
     public static function shouldRegisterNavigation(): bool
     {
         return reports()->getUseReportListPage();
@@ -39,7 +42,7 @@ class MenuPage extends Page
 
     public function getSubheading(): ?string
     {
-        return reports()->getSubheading();
+        return reports()->getSubHeading();
     }
 
     public function getHeader(): ?View
@@ -118,4 +121,5 @@ class MenuPage extends Page
 
         return $reports;
     }
+
 }

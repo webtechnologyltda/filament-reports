@@ -24,7 +24,7 @@ class MakeReportCommand extends Command
             $this->argument('name') ??
                 text(
                     label: 'What is the report name?',
-                    placeholder: 'MyCoolReport',
+                    placeholder: 'UserReport',
                     required: true,
                 ),
         )

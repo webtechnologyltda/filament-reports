@@ -1,6 +1,5 @@
 @import '../../vendor/filament/filament/resources/css/theme.css';
-
-@import './print-styles.css';
+@import './print-style.css';
 
 #fi-report .fi-ta-text{
     padding-top: 0px !important;

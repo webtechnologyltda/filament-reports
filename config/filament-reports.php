@@ -2,6 +2,7 @@
 
 // config for EightyNine/Reports
 return [
+
     /**
      * The directory where your reports are located
      */
@@ -13,7 +14,9 @@ return [
     'reports_namespace' => 'App\\Filament\\Reports',
 
     /**
-     * Disable the default reports menu page
+     *
      */
-    'reports_custom_menu_page' => true,
+    'use_report_list_page' => true,
+
+    'group_navigation_reports_page' => 'Administrativo',
 ];
